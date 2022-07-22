@@ -12,9 +12,20 @@ let myIdentity: <T>(args: T) => T = generic;
 
 myIdentity(5);
 
-interface INT<T> {
+interface INT<T extends any> {
   (args: T): T;
 }
 
 const myId: INT<number> = generic;
-myId(21)
+myId(21);
+
+function getProps<T, K extends keyof T>(object: T, key: K) {
+  return object[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProps(x, "a");
+getProps(x, "m");
+
+getProps(x, "a");
