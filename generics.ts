@@ -1,9 +1,9 @@
-const generic = <T>(props?: T): void => console.log(props);
+const generic = <T>(props: T): void => console.log(props);
+const genericWithList = <T>(props: T[]): void => console.log(props.length);
 
 generic("A"); //? works
 generic(5); //? works
 generic(false); //? works
-generic(); //? works
 
-
-let output = generic<string>("hello world");
+let output = generic<string>("hello world"); // thi's called casting in java
+let nOutput = generic<any>(1337);
