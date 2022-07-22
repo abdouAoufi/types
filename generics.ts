@@ -29,3 +29,18 @@ getProps(x, "a");
 getProps(x, "m");
 
 getProps(x, "a");
+
+type Point = {
+  x: number;
+  y?: number;
+};
+
+type coordinate = keyof Point;
+
+const xp: coordinate = "x";
+
+const myObject: Point = {
+  x: 3,
+};
+
+console.log(myObject[xp])
